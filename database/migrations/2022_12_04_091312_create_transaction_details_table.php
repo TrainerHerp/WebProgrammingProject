@@ -20,6 +20,7 @@ class CreateTransactionDetailsTable extends Migration
             $table->foreign('transaction_id')->references('id')->on('transaction_headers')->onDelete('cascade');
             $table->integer('quantity');
             $table->timestamps();
+            $table->primary(['item_id', 'transaction_id']);
         });
     }
 
