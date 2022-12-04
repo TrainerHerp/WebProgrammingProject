@@ -18,8 +18,8 @@ class CreateItemsTable extends Migration
             $table->string('name', 30);
             $table->string('description', 255);
             $table->string('image', 255);
-            $table->int('price');
-            $table->int('stock');
+            $table->integer('price');
+            $table->integer('stock');
             $table->timestamps();
         });
     }
