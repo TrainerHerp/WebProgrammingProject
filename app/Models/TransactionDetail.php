@@ -9,4 +9,12 @@ class TransactionDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function item() {
+        return $this->hasOne(Item::class);
+    }
+
+    public function transactionHeader() {
+        return $this->belongsTo(TransactionHeader::class);
+    }
 }

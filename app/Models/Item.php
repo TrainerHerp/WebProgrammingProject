@@ -9,4 +9,8 @@ class Item extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function transactionDetail() {
+        return $this->hasOne(TransactionDetail::class);
+    }
 }

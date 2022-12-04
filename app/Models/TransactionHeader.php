@@ -9,4 +9,12 @@ class TransactionHeader extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function transactionDetail() {
+        return $this->hasMany(TransactionDetail::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
