@@ -10,7 +10,7 @@ class TransactionHeader extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function transactionDetail() {
+    public function transactionDetails() {
         return $this->hasMany(TransactionDetail::class);
     }
 

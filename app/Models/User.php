@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     protected $guarded = [];
 
-    public function transactionHeader() {
+    public function transactionHeaders() {
         return $this->hasMany(TransactionHeader::class);
     }
 }

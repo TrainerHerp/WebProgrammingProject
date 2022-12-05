@@ -11,6 +11,6 @@ class Item extends Model
     protected $guarded = [];
 
     public function transactionDetail() {
-        return $this->hasOne(TransactionDetail::class);
+        return $this->belongsTo(TransactionDetail::class);
     }
 }
