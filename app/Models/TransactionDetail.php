@@ -11,7 +11,7 @@ class TransactionDetail extends Model
     protected $guarded = [];
 
     public function item() {
-        return $this->hasOne(Item::class);
+        return $this->hasOne(Item::class)->withDefault();
     }
 
     public function transactionHeader() {
