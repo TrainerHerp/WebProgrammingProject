@@ -5,23 +5,31 @@
 @endsection
 
 @section('content')
-  <h1>Home</h1>
+  <h1>Find Your Best Clothes Here</h1>
   <div>
     {{-- Class / CSS require fixing --}}
-    @foreach ($items as $product)
+    @foreach ($items->chunk(4) as $chunk)
+      <div class="card-group">
+        @foreach ($chunk as $post)
             <div class="col">
-                <div class="card h-100 text-white text-center bg-dark mb-3" style="...">
-                    <img class="card-ing-top" src="{{ url($product->image) }}" alt="Image Not Found" style="...">
+                <div class="card h-100 text-center mb-3" style="...">
+                    <img class="card-img" src="img/{{ $post['image'] }}" alt="Image Not Found" style="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $product->name }}</h5>
-                        <p class="card-text">Rp.{{ $product->price }}</p>
+                        <h5 class="card-title">{{ $post->name }}</h5>
+                        <p class="card-text">Rp.{{ $post->price }}</p>
                     </div>
                     <div class="flex">
                         {{-- UPDATE --}}
-                        <a href="/updateProduct/{{ $product->id }}" type="submit" class="btn btn-primary w-50">More Detail</a>
+                        <a href="/updateProduct/{{ $post->id }}" type="submit" class="btn btn-primary w-50">More Detail</a>
                     </div>
                 </div>
             </div>
         @endforeach
+      </div>
+    @endforeach
+  </div>
+  <div class="m-5 d-flex justify-content-center">
+    {{-- PAGINATION NAVIGATION --}}
+    {{ $items->withQueryString()->links() }}
   </div>
 @endsection
