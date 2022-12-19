@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart']);
+Route::get('/view-cart', function () {
     return view('view_cart');
 });
 
