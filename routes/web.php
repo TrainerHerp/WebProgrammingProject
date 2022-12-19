@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/view-cart', function () {
     return view('view_cart');
 });
+
+// To Change
+Route::get('/welcome', function () {
+  return view('welcome');
+});
+
+Route::get('/sign_in', function () {
+  return view('sign_in');
+});
+
+Route::get('/sign_up', function () {
+  return view('sign_up');
+});
+
+Route::get('/home', [ItemController::class, 'viewHome']);
