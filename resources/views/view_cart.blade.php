@@ -21,6 +21,6 @@
     @foreach ($items as $item)
     @endforeach
   @else
-    <h2>Cart is empty!</h2>
+    <h2 class="mt-5 text-center">Cart is empty!</h2>
   @endif
 @endsection

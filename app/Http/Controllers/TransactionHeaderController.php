@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\TransactionHeader;
 use Illuminate\Http\Request;
 
 class TransactionHeaderController extends Controller

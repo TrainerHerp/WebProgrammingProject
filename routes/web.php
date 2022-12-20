@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransactionHeaderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +17,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart']);
-Route::get('/view-cart', function () {
-    return view('view_cart');
-})->middleware('login');
+Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart']);
 
 // To Change
 Route::get('/', function () {
