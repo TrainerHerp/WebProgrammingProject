@@ -9,6 +9,9 @@
     <div class="col-4 px-5 pt-3 align-items-center rounded-1"
       style="border: solid 1px black; background-color: rgb(237, 189, 189); height: 600px">
       <h1 class="text-center">Sign Up</h1>
+      @if ($errors->any())
+        <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
+      @endif
       <form action="" method="POST" class="mt-3">
         @csrf
         <div class="mb-2">
@@ -25,8 +28,9 @@
             required>
         </div>
         <div class="mb-2">
-          <label for="phone" class="form-label">Phone Number</label>
-          <input type="text" class="form-control" id="phone" name="phone" placeholder="(10-13 numbers)" required>
+          <label for="phone_number" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="(10-13 numbers)"
+            required>
         </div>
         <div class="mb-3">
           <label for="address" class="form-label">Address</label>

@@ -9,6 +9,9 @@
     <div class="col-4 px-5 pt-3 align-items-center rounded-1"
       style="border: solid 1px black; background-color: rgb(237, 189, 189); height: 600px">
       <h1 class="text-center">Sign In</h1>
+      @if ($errors->any())
+        <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
+      @endif
       <form action="" method="POST" class="mt-3">
         @csrf
         <div class="mb-3">
