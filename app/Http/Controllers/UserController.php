@@ -15,7 +15,7 @@ class UserController extends Controller
         'email' => $request->email,
         'password' => $request->password
       ];
-      if(Auth::attempt($credentials)){
+      if(Auth::attempt($credentials, $request->remember)){
         return redirect('/home');
       }
       return back()->withErrors([
@@ -46,6 +46,11 @@ class UserController extends Controller
         'address' => $request->address,
       ]);
 
+      return redirect('/sign-in');
+    }
+
+    public function signOut(Request $request){
+      Auth::logout();
       return redirect('/sign-in');
     }
 }
