@@ -17,18 +17,18 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart']);
 Route::get('/view-cart', function () {
     return view('view_cart');
-});
+})->middleware('login');
 
 // To Change
-Route::get('/welcome', function () {
+Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/sign_in', function () {
+Route::get('/sign-in', function () {
   return view('sign_in');
 });
 
-Route::get('/sign_up', function () {
+Route::get('/sign-up', function () {
   return view('sign_up');
 });
 

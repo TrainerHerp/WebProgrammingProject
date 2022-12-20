@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TransactionHeaderController extends Controller
@@ -22,6 +23,7 @@ class TransactionHeaderController extends Controller
         $params = ['user_id' => auth()->user()->id, 'checkout' => false];
         $cart = TransactionHeader::where($params)->get();
         $cart['checkout'] = true;
+        $cart['transaction_date'] = Carbon::now();
         TransactionHeader::create(['user_id' => auth()->user()->id]);
         return redirect('/history');
     }
