@@ -3,6 +3,7 @@
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +28,14 @@ Route::get('/', function () {
 
 Route::get('/sign-in', function () {
   return view('sign_in');
-});
+})->middleware('logout');
 
 Route::post('/sign-in', [UserController::class, 'signIn']);
 
 Route::get('/sign-up', function () {
   return view('sign_up');
-});
+})->middleware('logout');
 
 Route::post('/sign-up', [UserController::class, 'signUp']);
 
-Route::get('/home', [ItemController::class, 'viewHome']);
+Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
