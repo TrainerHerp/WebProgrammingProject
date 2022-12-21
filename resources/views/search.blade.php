@@ -25,7 +25,7 @@
               </div>
               <div class="flex">
                 {{-- UPDATE --}}
-                <a href="/updateProduct/{{ $post->id }}" type="submit" class="btn btn-primary w-50">More Detail</a>
+                <a href="/detail/{{ $post->id }}" type="submit" class="btn btn-primary w-50">More Detail</a>
               </div>
             </div>
           </div>
