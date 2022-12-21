@@ -39,3 +39,7 @@ Route::post('/sign-up', [UserController::class, 'signUp']);
 Route::get('/sign-out', [UserController::class, 'signOut']);
 
 Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
+
+Route::get('/search', [ItemController::class, 'viewSearch']);
+
+Route::get('/view/search', [ItemController::class, 'viewPageSearch']);

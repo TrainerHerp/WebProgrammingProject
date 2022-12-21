@@ -1,11 +1,16 @@
 @extends('layouts.template')
 
 @section('title')
-  Home
+  Search
 @endsection
 
 @section('content')
-  <h1>Find Your Best Clothes Here</h1>
+<h1>Find Your Best Clothes Here</h1>
+<form class="d-flex search-bar" action="{{ url('/view/search') }}">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+      name="search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
   <div>
     {{-- Class / CSS require fixing --}}
     @foreach ($items->chunk(4) as $chunk)
@@ -33,3 +38,4 @@
     {{ $items->withQueryString()->links() }}
   </div>
 @endsection
+

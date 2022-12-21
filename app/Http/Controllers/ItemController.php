@@ -13,4 +13,15 @@ class ItemController extends Controller
 
       return view('home')->with('items', $items);
     }
+
+    public function viewSearch() {
+      $items = Item::paginate(8);
+
+      return view('search')->with('items', $items);
+    }
+
+    public function viewPageSearch(Request $request) {
+      $items = Item::where('name', 'like', "%$request->search%")->paginate(8);
+      return view('search')->with('items', $items);
+    }
 }
