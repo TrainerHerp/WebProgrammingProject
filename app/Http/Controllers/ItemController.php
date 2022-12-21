@@ -14,6 +14,11 @@ class ItemController extends Controller
       return view('home')->with('items', $items);
     }
 
+    public function viewDetail(Request $request, $id) {
+      $detail = Item::find($id);
+
+      return view('detail', ['detail'=>$detail]);
+  }
     public function viewSearch() {
       $items = Item::paginate(8);
 

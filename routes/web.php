@@ -43,3 +43,5 @@ Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
 Route::get('/search', [ItemController::class, 'viewSearch']);
 
 Route::get('/view/search', [ItemController::class, 'viewPageSearch']);
+
+Route::get('/detail/{id}', [ItemController::class, 'viewDetail']);
