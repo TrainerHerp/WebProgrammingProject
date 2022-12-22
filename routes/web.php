@@ -28,20 +28,22 @@ Route::get('/sign-in', function () {
   return view('sign_in');
 })->middleware('logout');
 
-Route::post('/sign-in', [UserController::class, 'signIn']);
+Route::post('/sign-in', [UserController::class, 'signIn'])->middleware('logout');
 
 Route::get('/sign-up', function () {
   return view('sign_up');
 })->middleware('logout');
 
-Route::post('/sign-up', [UserController::class, 'signUp']);
+Route::post('/sign-up', [UserController::class, 'signUp'])->middleware('logout');
 
-Route::get('/sign-out', [UserController::class, 'signOut']);
+Route::get('/sign-out', [UserController::class, 'signOut'])->middleware('login');
 
 Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
 
-Route::get('/search', [ItemController::class, 'viewSearch']);
+Route::get('/search', [ItemController::class, 'viewSearch'])->middleware('login');
 
-Route::get('/view/search', [ItemController::class, 'viewPageSearch']);
+Route::get('/view/search', [ItemController::class, 'viewPageSearch'])->middleware('login');
 
-Route::get('/detail/{id}', [ItemController::class, 'viewDetail']);
+Route::get('/detail/{id}', [ItemController::class, 'viewDetail'])->middleware('login');
+
+Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('login');
