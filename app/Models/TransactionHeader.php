@@ -10,8 +10,8 @@ class TransactionHeader extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function transactionDetails() {
-        return $this->hasMany(TransactionDetail::class);
+    public function transaction_details() {
+        return $this->hasMany(TransactionDetail::class, 'transaction_id');
     }
 
     public function user() {

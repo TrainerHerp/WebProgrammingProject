@@ -2,6 +2,9 @@
 
 @section('content')
   <div class="container detail-container">
+    @if ($errors->any())
+      <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
+    @endif
     <div class="detail">
       <img class="detail-img" src="{{ asset('img/' . $detail['image']) }}" alt="Avatar" style="width:300px; height:300px">
       <div class="detail-content">
@@ -13,8 +16,9 @@
         <br>
         <label class="sr-only" for="quantity">Quantity</label>
         <form class="form-inline" method="POST" action="/detail/{{ $detail['id'] }}">
+          @csrf
           <input type="number" class="form-control mb-2 mr-sm-2" style="width: 70%; margin-right:5px" id="quantity"
-            placeholder="Enter quantity...">
+            name="quantity" placeholder="Enter quantity...">
           <button type="submit" class="btn btn-success btn-update">Update Cart</button>
         </form>
         <button type="button" class="btn btn-danger btn-back"><a href="/home"

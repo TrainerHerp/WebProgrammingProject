@@ -8,17 +8,17 @@
   <h1 class="text-center">
     My Cart
   </h1>
-  @if ($items->count())
+  @if (sizeof($cart) > 0)
     <div class="d-flex justify-content-end">
       <h4>Total Price: {{ $total }}</h4>
       <form action="/view-cart" method="POST">
         @csrf
         <button type="button" class="btn btn-primary ms-3">
-          Check Out({{ $items->count() }})
+          Check Out({{ sizeof($cart) }})
         </button>
       </form>
     </div>
-    @foreach ($items as $item)
+    @foreach ($cart as $item)
     @endforeach
   @else
     <h2 class="mt-5 text-center">Cart is empty!</h2>

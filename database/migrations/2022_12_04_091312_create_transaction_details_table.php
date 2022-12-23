@@ -14,13 +14,13 @@ class CreateTransactionDetailsTable extends Migration
     public function up()
     {
         Schema::create('transaction_details', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('item_id');
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->foreignId('transaction_id');
             $table->foreign('transaction_id')->references('id')->on('transaction_headers')->onDelete('cascade');
             $table->integer('quantity');
             $table->timestamps();
-            $table->primary(['item_id', 'transaction_id']);
         });
     }
 

@@ -11,10 +11,10 @@ class TransactionDetail extends Model
     protected $guarded = [];
 
     public function item() {
-        return $this->hasOne(Item::class)->withDefault();
+        return $this->hasOne(Item::class);
     }
 
-    public function transactionHeader() {
+    public function transaction_header() {
         return $this->belongsTo(TransactionHeader::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\TransactionHeader;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -38,13 +39,15 @@ class UserController extends Controller
         return back()->withErrors($validator);
       }
 
-      User::create([
+      $newUser = User::create([
         'username' => $request->username,
         'email' => $request->email,
         'password' => Hash::make($request->password),
         'phone_number' => $request->phone_number,
         'address' => $request->address,
       ]);
+
+      TransactionHeader::create(['user_id' => $newUser->id]);
 
       return redirect('/sign-in');
     }
