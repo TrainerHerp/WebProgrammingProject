@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckIfAdmin
+class CheckIfMember
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class CheckIfAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::check() || Auth::user()->isAdmin == false) {
+        if(!Auth::check() || Auth::user()->isAdmin == true) {
           return back();
         }
         return $next($request);

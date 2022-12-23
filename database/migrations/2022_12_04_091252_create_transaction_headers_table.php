@@ -16,7 +16,7 @@ class CreateTransactionHeadersTable extends Migration
     {
         Schema::create('transaction_headers', function (Blueprint $table) {
             $table->id();
-            $table->datetime('transaction_date')->default(Carbon::now());
+            $table->string('transaction_date')->default(Carbon::now()->toDateString());
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('checkout')->default(false);

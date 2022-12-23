@@ -19,7 +19,7 @@
               <a class="nav-link" href="/view-cart">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">History</a>
+              <a class="nav-link" href="/history">History</a>
             </li>
           @endif
           <li class="nav-item">

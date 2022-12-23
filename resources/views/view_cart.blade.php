@@ -11,9 +11,9 @@
   @if (sizeof($cart) > 0)
     <div class="d-flex justify-content-end">
       <h4>Total Price: {{ $total }}</h4>
-      <form action="/view-cart" method="POST">
+      <form action="/checkout" method="POST">
         @csrf
-        <button type="button" class="btn btn-primary ms-3">
+        <button type="submit" class="btn btn-primary ms-3">
           Check Out({{ sizeof($cart) }})
         </button>
       </form>

@@ -18,8 +18,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart']);
-
 // To Change
 Route::get('/', function () {
   return view('welcome');
@@ -48,3 +46,9 @@ Route::get('/view/search', [ItemController::class, 'viewPageSearch'])->middlewar
 Route::get('/detail/{id}', [ItemController::class, 'viewDetail'])->middleware('login');
 
 Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('login');
+
+Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart'])->middleware('member');
+
+Route::post('/checkout', [TransactionHeaderController::class, 'checkout'])->middleware('member');
+
+Route::get('/history', [TransactionHeaderController::class, 'history'])->middleware('member');
