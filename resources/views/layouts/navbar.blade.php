@@ -29,6 +29,12 @@
       </ul>
       <ul class="navbar-nav">
         @auth
+          @if (Auth::user()->is_admin)
+            <li class="nav-item me-3">
+              <button class="btn bg-transparent btn-outline-primary"><a class="text-decoration-none" href="#">Add
+                  Item</a></button>
+            </li>
+          @endif
           <li class="nav-item me-3">
             <form action="/sign-out" method="get">
               <button class="btn bg-transparent btn-outline-primary" type="submit">Sign Out</button>
