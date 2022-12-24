@@ -110,6 +110,26 @@ class UserController extends Controller
     }
 
     public function viewEditPassword(){
+      return view('edit_password');
+    }
 
+    public function editPassword(Request $request){
+      $user = User::find(auth()->user()->id);
+      if(!Hash::check($request->old_password, $user->password)){
+        return back()->withErrors([
+          'fail' => 'Password doesn\'t match!'
+        ]);
+      }
+
+      $rule = ['new_password' => 'required|min:5|max:20'];
+      $validator = Validator::make($request->all(), $rule);
+
+      if($validator->fails()){
+        return back()->withErrors($validator);
+      }
+
+      $user->password = Hash::make($request->new_password);
+      $user->save();
+      return redirect('/profile');
     }
 }

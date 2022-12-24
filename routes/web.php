@@ -41,6 +41,8 @@ Route::patch('/edit-profile', [UserController::class, 'editProfile'])->middlewar
 
 Route::get('/edit-password', [UserController::class, 'viewEditPassword'])->middleware('login');
 
+Route::patch('/edit-password', [UserController::class, 'editPassword'])->middleware('login');
+
 // Item Controller
 Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
 

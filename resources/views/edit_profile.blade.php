@@ -12,7 +12,7 @@
       @if ($errors->any())
         <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
       @endif
-      <form action="" method="POST" class="mt-3">
+      <form action="/edit-profile" method="POST" class="mt-3">
         @csrf
         @method('PATCH')
         <div class="mb-2">
@@ -34,7 +34,7 @@
           <input type="text" class="form-control" id="address" name="address" value="{{ $address }}"
             placeholder="(min 5 letters)" required>
         </div>
-        <div class="d-flex justify-content-center mb-2">
+        <div class="d-flex justify-content-center my-4">
           <button class="btn text-center text-white" type="submit" style="background-color: green; width: 800px;">Save
             Update</button>
         </div>

@@ -17,11 +17,11 @@
       <h6 class="text-center mb-3">Phone: {{ $phone }}</h6>
       <div class="d-flex justify-content-center mb-4">
         @if ($role == 'member')
-          <button class="btn btn-primary me-3"><a href="/edit-profile" class="text-white text-decoration-none">Edit
-              Profile</a></button>
+          <a href="/edit-profile" class="text-white text-decoration-none"><button class="btn btn-primary me-3">Edit
+              Profile</button></a>
         @endif
-        <button class="btn bg-transparent btn-outline-primary"><a href="/edit-password" class="text-decoration-none">Edit
-            Password</a></button>
+        <a href="/edit-password" class="text-decoration-none"><button class="btn bg-transparent btn-outline-primary">Edit
+            Password</button></a>
       </div>
     </div>
   </div>

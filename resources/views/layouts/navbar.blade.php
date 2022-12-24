@@ -31,8 +31,8 @@
         @auth
           @if (Auth::user()->is_admin)
             <li class="nav-item me-3">
-              <button class="btn bg-transparent btn-outline-primary"><a class="text-decoration-none" href="#">Add
-                  Item</a></button>
+              <a class="text-decoration-none" href="#"><button class="btn bg-transparent btn-outline-primary">Add
+                  Item</button></a>
             </li>
           @endif
           <li class="nav-item me-3">
