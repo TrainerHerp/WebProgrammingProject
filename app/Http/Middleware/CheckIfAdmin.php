@@ -17,7 +17,7 @@ class CheckIfAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::check() || Auth::user()->isAdmin == false) {
+        if(!Auth::check() || Auth::user()->is_admin == false) {
           return back();
         }
         return $next($request);

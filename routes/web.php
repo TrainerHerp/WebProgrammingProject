@@ -52,8 +52,10 @@ Route::get('/view/search', [ItemController::class, 'viewPageSearch'])->middlewar
 
 Route::get('/detail/{id}', [ItemController::class, 'viewDetail'])->middleware('login');
 
+Route::delete('/delete-item/{id}', [ItemController::class, 'deleteItem'])->middleware('admin');
+
 // Transaction Detail Controller
-Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('login');
+Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('member');
 
 // Transaction Header Controller
 Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart'])->middleware('member');

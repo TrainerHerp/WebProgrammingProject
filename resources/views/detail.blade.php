@@ -13,16 +13,32 @@
         <br>
         <h5><b>Product Detail</b></h5>
         <p>{{ $detail['description'] }}</p>
-        <br>
-        <label class="sr-only" for="quantity">Quantity</label>
-        <form class="form-inline" method="POST" action="/detail/{{ $detail['id'] }}">
-          @csrf
-          <input type="number" class="form-control mb-2 mr-sm-2" style="width: 70%; margin-right:5px" id="quantity"
-            name="quantity" placeholder="Enter quantity...">
-          <button type="submit" class="btn btn-success btn-update">Update Cart</button>
-        </form>
-        <button type="button" class="btn btn-danger btn-back"><a href="/home"
-            class="text-decoration-none text-white">Back</a></button>
+        <hr>
+        @if (Auth::user()->is_admin)
+          <div class="row">
+            <div class="col-2">
+              <a href="/home" class="text-decoration-none text-white"><button
+                  class="btn btn-danger btn-back">Back</button></a>
+            </div>
+            <div class="col-3">
+              <form action="/delete-item/{{ $detail['id'] }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button class="btn btn-danger" type="submit">Delete Item</button>
+              </form>
+            </div>
+          </div>
+        @else
+          <label class="sr-only" for="quantity">Quantity</label>
+          <form class="form-inline" method="POST" action="/detail/{{ $detail['id'] }}">
+            @csrf
+            <input type="number" class="form-control mb-2 mr-sm-2" style="width: 70%; margin-right:5px" id="quantity"
+              name="quantity" placeholder="Enter quantity...">
+            <button type="submit" class="btn btn-success btn-update">Update Cart</button>
+          </form>
+          <a href="/home" class="text-decoration-none text-white"><button type="button"
+              class="btn btn-danger btn-back">Back</button></a>
+        @endif
       </div>
     </div>
   </div>

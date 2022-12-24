@@ -18,7 +18,8 @@ class ItemController extends Controller
       $detail = Item::find($id);
 
       return view('detail', ['detail'=>$detail]);
-  }
+    }
+
     public function viewSearch() {
       $items = Item::paginate(8);
 
@@ -28,5 +29,12 @@ class ItemController extends Controller
     public function viewPageSearch(Request $request) {
       $items = Item::where('name', 'like', "%$request->search%")->paginate(8);
       return view('search')->with('items', $items);
+    }
+
+    public function deleteItem(Request $request, $id) {
+      $item = Item::find($id);
+      $item->delete();
+
+      return redirect('/home');
     }
 }

@@ -37,6 +37,7 @@
           @endif
           <li class="nav-item me-3">
             <form action="/sign-out" method="get">
+              @csrf
               <button class="btn bg-transparent btn-outline-primary" type="submit">Sign Out</button>
             </form>
           </li>

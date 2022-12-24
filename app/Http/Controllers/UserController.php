@@ -24,6 +24,7 @@ class UserController extends Controller
         'email' => $request->email,
         'password' => $request->password
       ];
+      // Need to use cookies!!!!!!!!
       if(Auth::attempt($credentials, $request->remember)){
         return redirect('/home');
       }
