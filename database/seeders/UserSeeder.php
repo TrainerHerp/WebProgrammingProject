@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
           'username' => 'Andi',
           'email' => 'andi@gmail.com',
           'password' => Hash::make('12345678'),
-          'phone_number' => '12345678',
+          'phone_number' => '1234567890',
           'address' => 'ewfhuirhe4g'
         ]);
 
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
           'username' => 'Budi',
           'email' => 'budi@gmail.com',
           'password' => Hash::make('12345678'),
-          'phone_number' => '12345678',
+          'phone_number' => '1234567890',
           'address' => 'ewfhuirhe4g',
           'is_admin' => true
         ]);

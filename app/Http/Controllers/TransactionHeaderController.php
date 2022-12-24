@@ -36,7 +36,7 @@ class TransactionHeaderController extends Controller
         return redirect('/history');
     }
 
-    public function history(){
+    public function viewHistory(){
       $transactions = TransactionHeader::where(['user_id' => auth()->user()->id, 'checkout' => true])->get();
       $listOfTransactions = [];
       foreach ($transactions as $transaction) {

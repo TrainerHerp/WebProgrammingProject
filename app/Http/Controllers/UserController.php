@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function viewSignIn(){
+      return view('sign_in');
+    }
+
+    public function viewSignUp(){
+      return view('sign_up');
+    }
+
     public function signIn(Request $request) {
       $credentials = [
         'email' => $request->email,
@@ -55,5 +63,23 @@ class UserController extends Controller
     public function signOut(Request $request){
       Auth::logout();
       return redirect('/sign-in');
+    }
+
+    public function viewProfile(){
+      return view('profile', [
+        'name' => auth()->user()->username,
+        'email' => auth()->user()->email,
+        'address' => auth()->user()->address,
+        'phone' => auth()->user()->phone_number,
+        'role' => auth()->user()->is_admin ? 'admin' : 'member'
+      ]);
+    }
+
+    public function viewEditProfile(){
+
+    }
+
+    public function viewEditPassword(){
+
     }
 }

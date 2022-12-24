@@ -18,25 +18,28 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// To Change
 Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/sign-in', function () {
-  return view('sign_in');
-})->middleware('logout');
+// User Controller
+Route::get('/sign-in', [UserController::class, 'viewSignIn'])->middleware('logout');
 
 Route::post('/sign-in', [UserController::class, 'signIn'])->middleware('logout');
 
-Route::get('/sign-up', function () {
-  return view('sign_up');
-})->middleware('logout');
+Route::get('/sign-up', [UserController::class, 'viewSignUp'])->middleware('logout');
 
 Route::post('/sign-up', [UserController::class, 'signUp'])->middleware('logout');
 
 Route::get('/sign-out', [UserController::class, 'signOut'])->middleware('login');
 
+Route::get('/profile', [UserController::class, 'viewProfile'])->middleware('login');
+
+Route::get('/edit-profile', [UserController::class, 'viewEditProfile'])->middleware('member');
+
+Route::get('/edit-password', [UserController::class, 'viewEditPassword'])->middleware('login');
+
+// Item Controller
 Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
 
 Route::get('/search', [ItemController::class, 'viewSearch'])->middleware('login');
@@ -45,10 +48,13 @@ Route::get('/view/search', [ItemController::class, 'viewPageSearch'])->middlewar
 
 Route::get('/detail/{id}', [ItemController::class, 'viewDetail'])->middleware('login');
 
+// Transaction Detail Controller
 Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('login');
 
+// Transaction Header Controller
 Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart'])->middleware('member');
 
 Route::post('/checkout', [TransactionHeaderController::class, 'checkout'])->middleware('member');
 
-Route::get('/history', [TransactionHeaderController::class, 'history'])->middleware('member');
+Route::get('/history', [TransactionHeaderController::class, 'viewHistory'])->middleware('member');
+
