@@ -34,8 +34,8 @@ class UserController extends Controller
 
     public function signUp(Request $request) {
       $rules = [
-        'username' => 'required|min:5|max:20|unique:users',
-        'email' => 'required|email:rfc,dns|unique:users',
+        'username' => 'required|min:5|max:20|unique:users,username',
+        'email' => 'required|email:rfc,dns|unique:users,email',
         'password' => 'required|min:5|max:20',
         'phone_number' => 'required|min:10|max:13|regex:/^[0-9]+$/',
         'address' => 'required|min:5'
@@ -67,7 +67,7 @@ class UserController extends Controller
 
     public function viewProfile(){
       return view('profile', [
-        'name' => auth()->user()->username,
+        'username' => auth()->user()->username,
         'email' => auth()->user()->email,
         'address' => auth()->user()->address,
         'phone' => auth()->user()->phone_number,
@@ -76,7 +76,37 @@ class UserController extends Controller
     }
 
     public function viewEditProfile(){
+      return view('edit_profile', [
+        'username' => auth()->user()->username,
+        'email' => auth()->user()->email,
+        'address' => auth()->user()->address,
+        'phone_number' => auth()->user()->phone_number
+      ]);
+    }
 
+    public function editProfile(Request $request){
+      $user = User::find(auth()->user()->id);
+
+      $rules = [
+        'username' => 'required|min:5|max:20|unique:users,username,'.$user->id,
+        'email' => ['required','email:rfc,dns','unique:users,email,'.$user->id],
+        'phone_number' => 'required|min:10|max:13|regex:/^[0-9]+$/',
+        'address' => 'required|min:5'
+      ];
+
+      $validator = Validator::make($request->all(), $rules);
+
+      if($validator->fails()){
+        return back()->withErrors($validator);
+      }
+
+      $user['username'] = $request->username;
+      $user['email'] = $request->email;
+      $user['phone_number'] = $request->phone_number;
+      $user['address'] = $request->address;
+      $user->save();
+
+      return redirect('/profile');
     }
 
     public function viewEditPassword(){

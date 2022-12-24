@@ -37,6 +37,8 @@ Route::get('/profile', [UserController::class, 'viewProfile'])->middleware('logi
 
 Route::get('/edit-profile', [UserController::class, 'viewEditProfile'])->middleware('member');
 
+Route::patch('/edit-profile', [UserController::class, 'editProfile'])->middleware('member');
+
 Route::get('/edit-password', [UserController::class, 'viewEditPassword'])->middleware('login');
 
 // Item Controller

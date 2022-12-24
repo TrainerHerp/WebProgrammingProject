@@ -12,7 +12,7 @@
       @if ($errors->any())
         <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
       @endif
-      <form action="" method="POST" class="mt-3">
+      <form action="/sign-up" method="POST" class="mt-3">
         @csrf
         <div class="mb-2">
           <label for="username" class="form-label">Username</label>

@@ -11,7 +11,7 @@
       <div class="d-flex justify-content-center my-3">
         <button class="btn btn-secondary" disabled>{{ $role }}</button>
       </div>
-      <h5 class="text-center"><strong>Username: {{ $name }}</strong></h5>
+      <h5 class="text-center"><strong>Username: {{ $username }}</strong></h5>
       <h6 class="text-center mb-3">{{ $email }}</h6>
       <h6 class="text-center">Address: {{ $address }}</h6>
       <h6 class="text-center mb-3">Phone: {{ $phone }}</h6>
