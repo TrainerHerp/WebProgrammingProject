@@ -8,11 +8,14 @@ use App\Models\TransactionHeader;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 class UserController extends Controller
 {
     public function viewSignIn(){
-      return view('sign_in');
+      $email = (Cookie::get('email') ? Cookie::get('email') : '');
+      $password = (Cookie::get('password') ? Cookie::get('password') : '');
+      return view('sign_in', ['email' => $email, 'password' => $password]);
     }
 
     public function viewSignUp(){
@@ -24,8 +27,12 @@ class UserController extends Controller
         'email' => $request->email,
         'password' => $request->password
       ];
-      // Need to use cookies!!!!!!!!
-      if(Auth::attempt($credentials, $request->remember)){
+
+      if(Auth::attempt($credentials)){
+        if($request->remember){
+          Cookie::queue('email', $request->email, 120);
+          Cookie::queue('password', $request->password, 120);
+        }
         return redirect('/home');
       }
       return back()->withErrors([
