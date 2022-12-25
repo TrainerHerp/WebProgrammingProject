@@ -18,7 +18,7 @@ class TransactionHeaderController extends Controller
         if ($curTransaction->count()) {
             $details = $curTransaction->transaction_details;
             foreach ($details as $detail) {
-                $item = Item::find($detail->item_id)->first();
+                $item = Item::find($detail->item_id);
                 $total = $total + $detail->quantity * $item->price;
                 array_push($cart, ['detail' => $detail, 'item' => $item]);
             }
@@ -46,7 +46,7 @@ class TransactionHeaderController extends Controller
         $total = 0;
         foreach ($details as $detail) {
           $quantity = $detail->quantity;
-          $item = Item::find($detail->item_id)->first();
+          $item = Item::find($detail->item_id);
           $itemName = $item->name;
           $price = $quantity * $item->price;
           $total = $total + $price;
