@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<h1>Find Your Best Clothes Here</h1>
+<h1 class="head">FIND YOUR BEST CLOTHES HERE</h1>
 <form class="d-flex search-bar" action="{{ url('/view/search') }}">
   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
       name="search">
@@ -25,7 +25,7 @@
               </div>
               <div class="flex">
                 {{-- UPDATE --}}
-                <a href="/detail/{{ $post->id }}" type="submit" class="btn btn-primary w-50">More Detail</a>
+                <a href="/detail/{{ $post->id }}" type="submit" class="btn btn-dark w-50">More Detail</a>
               </div>
             </div>
           </div>

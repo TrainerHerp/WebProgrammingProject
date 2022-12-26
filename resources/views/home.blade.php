@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <h1>Find Your Best Clothes Here</h1>
+  <h1 class="head">FIND YOUR BEST CLOTHES HERE</h1>
   <div>
     {{-- Class / CSS require fixing --}}
     @foreach ($items->chunk(4) as $chunk)
@@ -20,7 +20,7 @@
               </div>
               <div class="flex">
                 {{-- UPDATE --}}
-                <a href="/detail/{{ $post->id }}" type="submit" class="btn btn-primary w-50">More Detail</a>
+                <a href="/detail/{{ $post->id }}" type="submit" class="btn btn-dark w-50">More Detail</a>
               </div>
             </div>
           </div>
