@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="row justify-content-center">
+  <div class="row justify-content-center sheet">
     <div class="col-6 px-5 pt-3 align-items-center rounded-1"
       style="border: solid 1px black; background-color: rgb(237, 189, 189); height: 600px">
       <h1 class="text-center">Update Profile</h1>
@@ -35,12 +35,11 @@
             placeholder="(min 5 letters)" required>
         </div>
         <div class="d-flex justify-content-center my-4">
-          <button class="btn text-center text-white" type="submit" style="background-color: green; width: 800px;">Save
+          <button class="btn btn-outline-success" type="submit" style="width: 800px;">Save
             Update</button>
         </div>
       </form>
-      <button class="btn bg-transparent btn-outline-danger"><a class="text-decoration-none text-danger"
-          href="/profile">Back</a></button>
+      <a class="text-decoration-none btn btn-outline-danger" href="/profile">Back</a></button>
     </div>
   </div>
 @endsection

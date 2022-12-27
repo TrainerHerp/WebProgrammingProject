@@ -26,12 +26,11 @@
             required>
         </div>
         <div class="d-flex justify-content-center my-4">
-          <button class="btn text-center text-white" type="submit" style="background-color: green; width: 800px;">Save
+          <button class="btn btn-outline-success" type="submit" style="width: 800px;">Save
             Update</button>
         </div>
       </form>
-      <a class="text-decoration-none text-danger" href="/profile"><button
-          class="btn bg-transparent btn-outline-danger">Back</button></a>
+      <a class="text-decoration-none btn btn-outline-danger" href="/profile">Back</a></button>
     </div>
   </div>
 @endsection

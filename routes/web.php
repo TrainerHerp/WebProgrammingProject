@@ -44,7 +44,7 @@ Route::get('/edit-password', [UserController::class, 'viewEditPassword'])->middl
 Route::patch('/edit-password', [UserController::class, 'editPassword'])->middleware('login');
 
 // Item Controller
-Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login');
+Route::get('/home', [ItemController::class, 'viewHome'])->middleware('login')->middleware('login');
 
 Route::get('/search', [ItemController::class, 'viewSearch'])->middleware('login');
 
@@ -64,3 +64,6 @@ Route::post('/checkout', [TransactionHeaderController::class, 'checkout'])->midd
 
 Route::get('/history', [TransactionHeaderController::class, 'viewHistory'])->middleware('member');
 
+Route::get('/edit-cart', [TransactionDetailController::class, 'editCart'])->middleware('member');
+
+Route::delete('/remove/{id}', [TransactionDetailController::class, 'remove'])->middleware('member');

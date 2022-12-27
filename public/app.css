@@ -10,6 +10,17 @@ h1 {
   height: 38px;
 }
 
+.btn-danger {
+  color: white;
+  background-color: rgb(206, 48, 48);
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
+  color: rgb(206, 48, 48);
+  background-color: white;
+  border-color: rgb(206, 48, 48); /*set the color you want here*/
+}
+
 .btn-dark {
   color: white;
   background-color: black;
@@ -32,15 +43,37 @@ h1 {
   border-color: slategray; /*set the color you want here*/
 }
 
+.btn-primary {
+  color: white;
+  background-color: rgb(33, 84, 252);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: rgb(33, 84, 252);
+  background-color: whitesmoke;
+  border-color: rgb(33, 84, 252); /*set the color you want here*/
+}
+
 .btn-secondary {
   color: white;
-  background-color: rgba(41, 37, 37, 0.623)
+  background-color: rgba(41, 37, 37, 0.623);
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-secondary {
   color: black;
   background-color: whitesmoke;
   border-color: black; /*set the color you want here*/
+}
+
+.btn-success {
+  color: white;
+  background-color: rgb(34, 138, 34);
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+  color: rgb(34, 138, 34);
+  background-color: white;
+  border-color: rgb(34, 138, 34); /*set the color you want here*/
 }
 
 .col {
@@ -58,8 +91,19 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 150px;
+  height: 125px;
   width: 50%;
+}
+
+.cart-button {
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.cart-buttons {
+  width: 250px;
+  padding: 0px;
+  margin-left: 0px;
 }
 
 .detail {
@@ -136,8 +180,30 @@ h1 {
   margin-bottom: 50px;
 }
 
+.sheet {
+  color: black;
+}
+
 .sign-in-up {
   width: 90px;
+}
+
+.transaction-card {
+  display: flex;
+  border: 1px solid slategray;
+  margin: 20px;
+  padding: 10px;
+}
+
+.transaction-card-body {
+  margin: auto;
+  width: 70%;
+}
+
+.transaction-card-img {
+  display: block;
+  width: 20%;
+  height: 200px;
 }
 
 .welcome-case {

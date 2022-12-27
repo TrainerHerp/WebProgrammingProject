@@ -20,7 +20,7 @@
           <a href="/edit-profile" class="text-white text-decoration-none"><button class="btn btn-primary me-3">Edit
               Profile</button></a>
         @endif
-        <a href="/edit-password" class="text-decoration-none"><button class="btn bg-transparent btn-outline-primary">Edit
+        <a href="/edit-password" class="text-decoration-none"><button class="btn btn-outline-primary">Edit
             Password</button></a>
       </div>
     </div>

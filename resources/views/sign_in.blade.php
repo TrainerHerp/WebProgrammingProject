@@ -28,8 +28,8 @@
           <label for="remember">Remember Me</label>
         </div>
         <div class="d-flex justify-content-center mb-5">
-          <button class="btn text-center text-white" type="submit"
-            style="background-color: rgb(180, 55, 55); width: 800px;">Sign
+          <button class="btn btn-danger" type="submit"
+            style="width: 800px;">Sign
             In</button>
         </div>
         <div class="text-center">

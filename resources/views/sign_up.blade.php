@@ -37,8 +37,8 @@
           <input type="text" class="form-control" id="address" name="address" placeholder="(min 5 letters)" required>
         </div>
         <div class="d-flex justify-content-center mb-3">
-          <button class="btn text-center text-white" type="submit"
-            style="background-color: rgb(180, 55, 55); width: 800px;">Submit</button>
+          <button class="btn text-center btn-danger" type="submit"
+            style="width: 800px;">Submit</button>
         </div>
         <div class="text-center">
           Already Registered?
