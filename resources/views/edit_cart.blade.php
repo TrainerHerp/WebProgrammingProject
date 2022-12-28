@@ -4,6 +4,7 @@
 
 @section('content')
   <div class="container detail-container">
+    <h1>Edit Cart</h1>
     @if ($errors->any())
       <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
     @endif
