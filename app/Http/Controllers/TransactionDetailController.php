@@ -37,7 +37,7 @@ class TransactionDetailController extends Controller
           ]);
         }
 
-        return redirect('/home');
+        return redirect('/view-cart');
     }
 
     public function editCart(Request $request) {

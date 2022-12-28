@@ -34,7 +34,7 @@
             @csrf
             <input type="number" class="form-control mb-2 mr-sm-2" style="width: 70%; margin-right:5px" id="quantity"
               name="quantity" placeholder="Enter quantity...">
-            <button type="submit" class="btn btn-success btn-update">Update Cart</button>
+            <button type="submit" class="btn btn-success btn-update">Add to Cart</button>
           </form>
           <a href="/home" class="text-decoration-none text-white"><button type="button"
               class="btn btn-danger btn-back">Back</button></a>
