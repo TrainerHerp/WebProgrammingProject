@@ -76,11 +76,6 @@ h1 {
   border-color: rgb(34, 138, 34); /*set the color you want here*/
 }
 
-.col {
-  margin: 2px;
-  margin-bottom: 10px;
-}
-
 .card {
   margin: 5px;
   padding: 10px;

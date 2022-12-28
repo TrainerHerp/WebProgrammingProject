@@ -54,6 +54,10 @@ Route::get('/detail/{id}', [ItemController::class, 'viewDetail'])->middleware('l
 
 Route::delete('/delete-item/{id}', [ItemController::class, 'deleteItem'])->middleware('admin');
 
+Route::get('/add-item', [ItemController::class, 'viewAddItem'])->middleware('admin');
+
+Route::post('/add-item', [ItemController::class, 'addItem'])->middleware('admin');
+
 // Transaction Detail Controller
 Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('member');
 

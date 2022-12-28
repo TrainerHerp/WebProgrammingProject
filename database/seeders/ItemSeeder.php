@@ -16,7 +16,6 @@ class ItemSeeder extends Seeder
     public function run()
     {
         DB::table('items')->insert([
-            'id' => 1,
             'name' => "White T-Shirt",
             'description' => "Just a white t-shirt",
             'image' => "white-t-shirt.jpg",
@@ -27,7 +26,6 @@ class ItemSeeder extends Seeder
         ]);
 
         DB::table('items')->insert([
-          'id' => 2,
           'name' => "Red T-Shirt",
           'description' => "Just a red t-shirt",
           'image' => "red-t-shirt.jpg",
@@ -38,7 +36,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 3,
         'name' => "Green T-Shirt",
         'description' => "Just a green t-shirt",
         'image' => "green-t-shirt.jpeg",
@@ -49,7 +46,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 4,
         'name' => "Black T-Shirt",
         'description' => "Just a black t-shirt",
         'image' => "black-t-shirt.jpg",
@@ -60,7 +56,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 5,
         'name' => "Light Blue Shirt",
         'description' => "Just a light blue shirt",
         'image' => "light-blue-shirt.jpg",
@@ -71,7 +66,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 6,
         'name' => "Black and Red Shirt",
         'description' => "Just a black and red shirt",
         'image' => "black-and-red-shirt.webp",
@@ -82,7 +76,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 7,
         'name' => "Green Shirt",
         'description' => "Just a green shirt",
         'image' => "green-shirt.webp",
@@ -93,7 +86,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 8,
         'name' => "Black and White Shirt",
         'description' => "Just a black and white shirt",
         'image' => "black-and-white-shirt.jpg",
@@ -104,7 +96,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 9,
         'name' => "Brown Jacket",
         'description' => "Just a brown jacket",
         'image' => "brown-jacket.jpeg",
@@ -115,7 +106,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 10,
         'name' => "Ridge Work Jacket",
         'description' => "Just a ridge work jacket",
         'image' => "ridge-work-jacket.webp",
@@ -126,7 +116,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 11,
         'name' => "Hoodie Jacket",
         'description' => "Just a hoodie jacket",
         'image' => "hoodie-jacket.png",
@@ -137,7 +126,6 @@ class ItemSeeder extends Seeder
       ]);
 
       DB::table('items')->insert([
-        'id' => 12,
         'name' => "Leather Jacket",
         'description' => "Just a leather jacket",
         'image' => "leather-jacket.jpg",
