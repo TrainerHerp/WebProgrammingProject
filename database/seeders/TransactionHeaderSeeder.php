@@ -17,9 +17,5 @@ class TransactionHeaderSeeder extends Seeder
         DB::table('transaction_headers')->insert([
           'user_id' => 1
         ]);
-
-        DB::table('transaction_headers')->insert([
-          'user_id' => 2
-        ]);
     }
 }
