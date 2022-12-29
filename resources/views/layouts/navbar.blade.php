@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo/MB.png') }}" class="logo" alt="Mai Boutique Logo"></a>
+    <a class="navbar-brand" href="/"><img src="{{ asset('img/logo/MB.png') }}" class="logo"
+        alt="Mai Boutique Logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,7 +32,7 @@
         @auth
           @if (Auth::user()->is_admin)
             <li class="nav-item me-3">
-              <a class="text-decoration-none" href="/add-item"><button class="btn btn-primary">Add
+              <a class="text-decoration-none" href="/add-item"><button class="btn btn-secondary">Add
                   Item</button></a>
             </li>
           @endif
