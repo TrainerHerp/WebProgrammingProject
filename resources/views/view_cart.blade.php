@@ -1,5 +1,3 @@
-{{-- @dd($cart) --}}
-
 @extends('layouts.template')
 
 @section('title')
@@ -22,7 +20,7 @@
     </div>
     @foreach ($cart as $post)
       <div class="transaction-card" style="...">
-        <img class="transaction-card-img" src="{{ asset('storage/img/' . $post['item']->image) }}" alt="Image Not Found" style="...">
+        <img class="transaction-card-img" src="{{ '/'.$post['item']->image }}" alt="Image Not Found" style="...">
         <div class="transaction-card-body">
           <h5 class="transaction-card-title">{{ $post['item']->name }}</h5>
           <p class="transaction-card-text">Rp.{{ $post['item']->price }}</p>

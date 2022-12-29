@@ -188,6 +188,7 @@ h1 {
   border: 1px solid slategray;
   margin: 20px;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .transaction-card-body {

@@ -15,7 +15,7 @@
     @foreach ($items as $post)
       <div class="col">
         <div class="card h-100 text-center mb-3" style="...">
-          <img class="card-img" src="{{ asset('storage/img/' . $post['image']) }}" alt="Image Not Found" style="...">
+          <img class="card-img" src="{{ '/'.$post['image'] }}" alt="Image Not Found" style="...">
           <div class="card-body">
             <h5 class="card-title">{{ $post->name }}</h5>
             <p class="card-text">Rp.{{ $post->price }}</p>

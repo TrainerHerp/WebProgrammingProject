@@ -63,7 +63,7 @@ class ItemController extends Controller
       $imageName = $image->getClientOriginalName();
 
       Storage::putFileAs('public/img', $image, $imageName);
-      $imageUrl = $imageName;
+      $imageUrl = 'storage/img/'.$imageName;
 
       Item::create([
           'name' => $request->name,

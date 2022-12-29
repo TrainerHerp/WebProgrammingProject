@@ -9,7 +9,7 @@
       <div class="text-center"><strong class="text-danger">{{ $errors->first() }}</strong></div>
     @endif
     <div class="detail">
-      <img class="detail-img" src="{{ asset('img/' . $item['image']) }}" alt="Avatar" style="width:300px; height:300px">
+      <img class="detail-img" src="{{ '/'.$item['image'] }}" alt="Avatar" style="width:300px; height:300px">
       <div class="detail-content">
         <h4><b>{{ $item->name }}</b></h4>
         <h5>Rp.{{ $item->price }}</h5>
