@@ -61,13 +61,13 @@ Route::post('/add-item', [ItemController::class, 'addItem'])->middleware('admin'
 // Transaction Detail Controller
 Route::post('/detail/{id}', [TransactionDetailController::class, 'addItem'])->middleware('member');
 
+Route::get('/edit-cart', [TransactionDetailController::class, 'editCart'])->middleware('member');
+
+Route::delete('/remove/{id}', [TransactionDetailController::class, 'remove'])->middleware('member');
+
 // Transaction Header Controller
 Route::get('/view-cart', [TransactionHeaderController::class, 'viewCart'])->middleware('member');
 
 Route::post('/checkout', [TransactionHeaderController::class, 'checkout'])->middleware('member');
 
 Route::get('/history', [TransactionHeaderController::class, 'viewHistory'])->middleware('member');
-
-Route::get('/edit-cart', [TransactionDetailController::class, 'editCart'])->middleware('member');
-
-Route::delete('/remove/{id}', [TransactionDetailController::class, 'remove'])->middleware('member');
